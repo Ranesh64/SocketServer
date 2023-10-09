@@ -23,7 +23,6 @@ io.on("connection", (socket) => {
     socket.broadcast.emit("playerStateChange", playerState);
   });
 
-  
   socket.on("outgoing:call", ({ to, from }) => {
     console.log("Outgoing call");
     socket.to(to).emit("incoming:call", {
@@ -44,3 +43,5 @@ io.on("connection", (socket) => {
 });
 
 server.listen(PORT, () => console.log(`Server started at PORT:${PORT}`));
+
+module.exports = server;
