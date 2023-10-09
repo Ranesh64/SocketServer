@@ -12,6 +12,10 @@ const PORT = process.env.PORT || 8000;
 
 const users = new Map();
 
+app.get("/", (req, res) => {
+  res.send("Hey this is my API running 🥳");
+});
+
 io.on("connection", (socket) => {
   console.log("Socket connected", socket.id);
   users.set(socket.id, socket.id);
@@ -42,6 +46,7 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(PORT, () => console.log(`Server started at PORT:${PORT}`));
+// server.listen(PORT, () => console.log(`Server started at PORT:${PORT}`));
+app.listen(PORT, () => console.log(`Server started at PORT:${PORT}`));
 
-module.exports = server;
+module.exports = app;
