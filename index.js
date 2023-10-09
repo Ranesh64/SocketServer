@@ -46,7 +46,6 @@ io.on("connection", (socket) => {
   });
 });
 
-// server.listen(PORT, () => console.log(`Server started at PORT:${PORT}`));
-app.listen(PORT, () => console.log(`Server started at PORT:${PORT}`));
+server.listen(PORT, () => console.log(`Server started at PORT:${PORT}`));
 
-module.exports = app;
+module.exports = server;
